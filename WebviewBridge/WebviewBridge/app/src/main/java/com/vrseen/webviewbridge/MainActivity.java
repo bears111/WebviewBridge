@@ -2,6 +2,7 @@ package com.vrseen.webviewbridge;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Button;
@@ -43,4 +44,12 @@ public class MainActivity extends Activity {
             }
         });
     }
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
+            myWebView.goBack(); // goBack()表示返回WebView的上一页面
+            return true;
+        }
+        return super.onKeyDown(keyCode,event);
+    }
+
 }

@@ -1,5 +1,6 @@
 package jsbridge.core;
 
+import android.graphics.Bitmap;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -28,25 +29,9 @@ public  class BridgeWebviewEngin {
      webSettings.setMediaPlaybackRequiresUserGesture(false);
    }
 
-   myWebView.setWebChromeClient(new WebChromeClient()
-   {
-     @Override
-     public boolean onJsAlert(WebView view, String url, String message,JsResult result) {
-       return super.onJsAlert(view, url, message, result);
-     }
-     @Override
-     public final boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
-       result.confirm();
-       JsCallJava.newInstance().call(view,message);
-       return true;
-     }
 
-     @Override
-     public boolean onJsConfirm(WebView view, String url, String message, JsResult result) {
-       return super.onJsConfirm(view, url, message, result);
-     }
-   });
-
+     myWebView.setWebViewClient(new BridgeWebViewClinet());
+     myWebView.setWebChromeClient(new BridgeWebChromeClinet());
    return myWebView;
  }
 }
