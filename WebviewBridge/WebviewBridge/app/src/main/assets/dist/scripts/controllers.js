@@ -11,9 +11,9 @@ $scope.showPopup=function(){
    alert(JSON.stringify(msg))},function(error){alert(error)});
 }
 
-/*RainbowBridge.onJavaCompleteMainActivity=function(res){
+RainbowBridge.onJavaCompleteMainActivity=function(res){
         alert(JSON.stringify(res));
-};*/
+};
 $scope.showPopup1=function(){
    RainbowBridge.callMethod('BridgePlug','jumpActivity',{'msg':'I am showToast'},
    function(msg){
