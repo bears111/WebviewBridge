@@ -1,5 +1,5 @@
 /**
- * Created by zhengxiaoyong on 16/4/18.
+ * Created by sunjie on 2016/06/30.
  *
  * native结果数据返回格式:
  * var resultData = {

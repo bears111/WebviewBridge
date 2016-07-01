@@ -7,7 +7,8 @@ $scope.settings={};
 
 $scope.showPopup=function(){
    RainbowBridge.callMethod('BridgePlug','showToast',{'msg':'I am showToast'},
-   function(msg){alert(JSON.stringify(msg))},function(error){alert(error)});
+   function(msg){
+   alert(JSON.stringify(msg))},function(error){alert(error)});
 }
 
 /*RainbowBridge.onJavaCompleteMainActivity=function(res){
