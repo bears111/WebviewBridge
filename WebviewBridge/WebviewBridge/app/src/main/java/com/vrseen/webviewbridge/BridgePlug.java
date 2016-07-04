@@ -19,7 +19,7 @@ import org.json.JSONObject;
 import jsbridge.core.JsCallback;
 
 /**
- * Created by zhengxiaoyong on 16/4/19.
+ * Created by sunjie on 2016/06/30.
  */
 public class BridgePlug  {
 

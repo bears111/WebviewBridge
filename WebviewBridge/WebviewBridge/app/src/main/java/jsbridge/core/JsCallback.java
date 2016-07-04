@@ -22,7 +22,7 @@ import jsbridge.async.AsyncTaskExecutor;
  * data: {}//数据
  * };
  * <p/>
- * Created by zhengxiaoyong on 16/4/18.
+ * Created by sunjie on 2016/06/30.
  */
 public class JsCallback {
     private static final String CALLBACK_JS_FORMAT = "javascript:RainbowBridge.onComplete(%s,%s);";
