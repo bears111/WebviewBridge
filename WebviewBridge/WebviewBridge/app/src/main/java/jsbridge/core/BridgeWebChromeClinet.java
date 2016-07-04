@@ -40,7 +40,6 @@ public class BridgeWebChromeClinet extends WebChromeClient {
     public void onProgressChanged(WebView view, int newProgress) {
         Activity activity = (Activity) view.getContext();
         final ProgressBar bar = (ProgressBar)activity.findViewById(R.id.myProgressBar);
-        Log.i("BridgeWebChromeClinet",newProgress+"-------------------");
         if (newProgress == 100) {
             bar.setVisibility(View.INVISIBLE);
         } else {

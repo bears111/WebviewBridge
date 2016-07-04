@@ -12,7 +12,7 @@ $scope.showPopup=function(){
 }
 
 RainbowBridge.onJavaCompleteMainActivity=function(res){
-        alert(JSON.stringify(res));
+        alert("来之原生端的数据"+JSON.stringify(res));
 };
 $scope.showPopup1=function(){
    RainbowBridge.callMethod('BridgePlug','jumpActivity',{'msg':'I am showToast'},
@@ -27,7 +27,14 @@ $scope.showPopup1=function(){
         //执行用户登录操作
         $scope.login = function(){
          /*console.log($scope.formUser);*/
-         $state.go("dash");
+         var myPopup = $ionicPopup.show({
+                         title: '<b>登录</b>'
+           });
+           $timeout(function(){
+           myPopup.close();
+           $state.go("dash");
+           },1000)
+
         };
 
         $scope.showErrorMesPopup = function(title) {

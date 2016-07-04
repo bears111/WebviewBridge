@@ -22,17 +22,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myWebView = (WebView) findViewById(R.id.webView);
-        //button=(Button)findViewById(R.id.button);
+        button=(Button)findViewById(R.id.button);
         myWebView= BridgeWebviewEngin.initWebViewSettings(myWebView);
         RainbowBridge.getInstance()
                 .clazz(BridgePlug.class)
                 .inject();
         myWebView.loadUrl("file:///android_asset/dist/index.html");
 
-        /*button.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(myWebView.getContext(), "点击了", Toast.LENGTH_SHORT).show();
+                Toast.makeText(myWebView.getContext(), "原生按钮点击了", Toast.LENGTH_SHORT).show();
                 JSONObject resultObj = new JSONObject();
                 try {
                     resultObj.put("msg",12);
@@ -42,7 +42,7 @@ public class MainActivity extends Activity {
                 }
                 JavaCallJs.javaCallJs(myWebView,"MainActivity",resultObj);
             }
-        });*/
+        });
     }
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
