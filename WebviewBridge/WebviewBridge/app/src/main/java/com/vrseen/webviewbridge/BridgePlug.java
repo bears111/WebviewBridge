@@ -49,6 +49,7 @@ public class BridgePlug  {
         JsCallback.invokeJsCallback(callback, true, result, "123");
     }
 
+
     public static void getAppName(final WebView webView, JSONObject data, final JsCallback callback) {
         String appName;
         try {

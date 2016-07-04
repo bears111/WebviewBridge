@@ -26,8 +26,11 @@ $scope.showPopup1=function(){
         $scope.formUser = {};
 
         //执行用户登录操作
-        $scope.doLogin = function(){
+        $scope.login = function(){
+          var forDate={
 
+          }
+         $scope.go
         };
 
         $scope.showErrorMesPopup = function(title) {
