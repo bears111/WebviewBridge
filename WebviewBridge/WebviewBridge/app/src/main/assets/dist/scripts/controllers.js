@@ -8,7 +8,7 @@ $scope.settings={};
 $scope.showPopup=function(){
    RainbowBridge.callMethod('BridgePlug','showToast',{'msg':'I am showToast'},
    function(msg){
-   alert(JSON.stringify(msg))},function(error){alert(error)});
+   alert(JSON.stringify(msg))});
 }
 
 RainbowBridge.onJavaCompleteMainActivity=function(res){
@@ -24,13 +24,10 @@ $scope.showPopup1=function(){
 }])
 .controller('LoginCtrl',['$scope', '$ionicPopup', '$timeout', '$state',  '$data', function($scope, $ionicPopup, $timeout, $state, $data) {
         $scope.formUser = {};
-
         //执行用户登录操作
         $scope.login = function(){
-          var forDate={
-
-          }
-         $scope.go
+         /*console.log($scope.formUser);*/
+         $state.go("dash");
         };
 
         $scope.showErrorMesPopup = function(title) {
@@ -53,8 +50,6 @@ $scope.showPopup1=function(){
             }, 2000);
         };
     }])
-    
-    
  .controller('ModifyPasswordCtrl',['$scope', '$ionicPopup', '$timeout', '$state',  '$data', function($scope, $ionicPopup, $timeout, $state, $data) {
         $scope.formUser = {};
 
