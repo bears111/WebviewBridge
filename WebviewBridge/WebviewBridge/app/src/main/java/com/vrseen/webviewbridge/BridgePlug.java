@@ -10,6 +10,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.webkit.WebView;
 import android.widget.Toast;
 
@@ -22,7 +23,7 @@ import jsbridge.core.JsCallback;
  * Created by sunjie on 2016/06/30.
  */
 public class BridgePlug  {
-
+    private final static  String TAG="BridgePlug";
     public static void showToast(WebView webView, JSONObject data, JsCallback callback) {
         Toast.makeText(webView.getContext(), data.toString(), Toast.LENGTH_SHORT).show();
         JSONObject result = new JSONObject();
@@ -72,13 +73,16 @@ public class BridgePlug  {
     public static void  jumpActivity(final WebView webView, JSONObject data, final JsCallback callback) {
 
         try {
-            Activity activity = (Activity) webView.getContext();
-            Intent intent = new Intent(activity,LoginActivity.class);
-            intent.putExtra("ifAppViewCreate", "PX002");
-            // 打开新的Activity
-            activity.startActivity(intent);
+
+            if (webView.getContext() instanceof Activity)
+            {
+                Intent intent = new Intent(webView.getContext(),LoginActivity.class);
+                intent.putExtra("ifAppViewCreate", "PX002");
+                // 打开新的Activity
+                webView.getContext().startActivity(intent);
+            }
         } catch (Exception e) {
-            e.printStackTrace();
+            Log.e(TAG,e.getMessage());
         }
         JsCallback.invokeJsCallback(callback, true, null, null);
     }
