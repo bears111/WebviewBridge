@@ -1,3 +1,4 @@
+
 # WebviewBridge
 WebviewBridge (android)  h5 angular。(ionic)
 这是Hybird实现的一个demo  集成angular.js主要是ionic框架下面的-----感谢ionic团队的付出
@@ -18,4 +19,6 @@ WebviewBridge (android)  h5 angular。(ionic)
 
 这个方法监听  win.prompt(uri, "");  
 addJavascriptInterface(Object obj,String interfaceName)原有大都是靠这个实现，这个有注入漏洞，不安全，不过这个在api16以上已经修复。
+01.[项目连接](https://github.com/bears111/WebviewBridge/tree/master/WebviewBridge/WebviewBridge)  (@作者bears111)<br>
+<br>
 
