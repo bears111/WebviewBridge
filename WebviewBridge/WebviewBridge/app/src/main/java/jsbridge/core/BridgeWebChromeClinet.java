@@ -16,6 +16,7 @@ import com.vrseen.webviewbridge.R;
  * Created by sunjie on 2016/7/1.
  */
 public class BridgeWebChromeClinet extends WebChromeClient {
+    private final String TAG="BridgeWebChromeClinet";
     public BridgeWebChromeClinet() {
 
     }
