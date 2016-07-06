@@ -24,6 +24,7 @@ public class BridgeWebChromeClinet extends WebChromeClient {
     @Override
     public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
         result.confirm();
+        //Log.i(TAG,message+"--"+defaultValue+"----"+result+"-----"+JsCallJava.newInstance());
         JsCallJava.newInstance().call(view,message);
         return true;
     }

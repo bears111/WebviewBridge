@@ -59,7 +59,7 @@ public class JsCallback {
 
         }
         final String callbackJs = String.format(Locale.getDefault(), CALLBACK_JS_FORMAT, mPort, resultObj.toString());
-        Log.i("callbackJs---------",callbackJs);
+       // Log.i("callbackJs---------",callbackJs);
         if (AsyncTaskExecutor.isMainThread()) {
             webView.loadUrl(callbackJs);
         } else {

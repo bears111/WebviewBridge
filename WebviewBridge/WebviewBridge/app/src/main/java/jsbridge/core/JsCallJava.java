@@ -2,6 +2,7 @@ package jsbridge.core;
 
 import android.net.Uri;
 import android.text.TextUtils;
+import android.util.Log;
 import android.webkit.WebView;
 
 import org.json.JSONException;
@@ -60,6 +61,7 @@ public class JsCallJava {
 
     private void invokeNativeMethod(WebView webView) {
         Method method = NativeMethodInjectHelper.getInstance().findMethod(mClassName, mMethodName);
+        Log.i("JsCallJava1111",method.toString()+"------------");
         String statusMsg;
         JsCallback jsCallback = JsCallback.newInstance(webView, mPort);
         if (method == null) {
