@@ -17,7 +17,6 @@ public class JavaCallJs {
         final WebView DTOwebView = DOwebView;
         String CALLBACK_JS_FORMAT = "javascript:RainbowBridge.onJavaComplete"+Activity+"(%s);";
         final String callbackJs = String.format(Locale.getDefault(), CALLBACK_JS_FORMAT, resultData.toString());
-        Log.i("callbackJs---------",callbackJs);
         if (AsyncTaskExecutor.isMainThread()) {
             DTOwebView.loadUrl(callbackJs);
         } else {
