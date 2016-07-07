@@ -73,16 +73,16 @@ public class BridgePlug  {
     public static void  jumpActivity(final WebView webView, JSONObject data, final JsCallback callback) {
 
         try {
-
             if (webView.getContext() instanceof Activity)
             {
-                Intent intent = new Intent(webView.getContext(),LoginActivity.class);
+                Activity activity =(Activity) webView.getContext();
+                Intent intent = new Intent(activity,LoginActivity.class);
                 intent.putExtra("ifAppViewCreate", "PX002");
                 // 打开新的Activity
-                webView.getContext().startActivity(intent);
+                activity.startActivity(intent);
             }
         } catch (Exception e) {
-            Log.e(TAG,e.getMessage());
+           e.printStackTrace();
         }
         JsCallback.invokeJsCallback(callback, true, null, null);
     }

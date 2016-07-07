@@ -1,7 +1,6 @@
 package jsbridge.core;
 
 import android.app.Activity;
-import android.util.Log;
 import android.view.View;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
@@ -9,7 +8,6 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebView;
 import android.widget.ProgressBar;
 
-import com.vrseen.webviewbridge.LoginActivity;
 import com.vrseen.webviewbridge.R;
 
 /**
