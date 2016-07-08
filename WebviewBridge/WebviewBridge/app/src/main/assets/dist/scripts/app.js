@@ -5,8 +5,11 @@ angular.module('myApp',
 				'myApp.directives',
 				])
 
-    .run(function($ionicPlatform) {
-    })
+   .run(function($ionicPlatform,$rootScope) {
+     $rootScope.$on('$stateChangeStart',function(event, toState, toParams, fromState, fromParams, options){
+	      console.log("toState--",toState)
+	      console.log("fromState--->", fromState)
+})
 
     .config(function($stateProvider, $urlRouterProvider,$ionicConfigProvider) {
 			
