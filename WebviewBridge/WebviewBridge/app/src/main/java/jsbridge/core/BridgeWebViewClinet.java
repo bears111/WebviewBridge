@@ -47,11 +47,10 @@ public class BridgeWebViewClinet extends WebViewClient {
         }
         super.onPageFinished(view, url);
     }
+
     public void showToast() {
         //自定义吐司
-
         final WindowManager.LayoutParams params = new WindowManager.LayoutParams();
-
         params.height = WindowManager.LayoutParams.WRAP_CONTENT;
         params.width = WindowManager.LayoutParams.WRAP_CONTENT;
         params.flags = WindowManager.LayoutParams.FLAG_NOT_FOCUSABLE
@@ -60,7 +59,6 @@ public class BridgeWebViewClinet extends WebViewClient {
         params.type = WindowManager.LayoutParams.TYPE_TOAST ;
         params.gravity = Gravity.CENTER;
         params.setTitle("Toast");
-
         mViewToast = View.inflate(mContext, R.layout.loading, null);
         mWM.addView(mViewToast, params);
     }

@@ -28,8 +28,6 @@ public  class BridgeWebviewEngin {
    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
      webSettings.setMediaPlaybackRequiresUserGesture(false);
    }
-
-
      myWebView.setWebViewClient(new BridgeWebViewClinet());
      myWebView.setWebChromeClient(new BridgeWebChromeClinet());
    return myWebView;

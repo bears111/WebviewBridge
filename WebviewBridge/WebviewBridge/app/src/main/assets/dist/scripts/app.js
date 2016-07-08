@@ -45,7 +45,10 @@ angular.module('myApp',
             .state('dash',{
                 url:'/dash',
                 templateUrl:'templates/tab-dash.html',
-                controller:'DashCtrl'
+                controller:'DashCtrl',
+                onExit: function(){
+                    delete RainbowBridge.onJavaCompleteMainActivity;
+                }
             })
 
             
