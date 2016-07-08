@@ -19,8 +19,8 @@
                     <label class="item item-input">
                         <i class="icon ion-android-lock positive"></i>
                         <input type="password" placeholder="6-10位字母数字组合" name="password" ng-pattern="/^(?![0-9]+$)(?![a-zA-Z]+$)[0-9A-Za-z]{6,10}$/" ng-minlength="6" ng-maxlength="15" ng-model="formUser.password" required>
-                        <i class="icon ion-close-circled assertive" ng-show="myForm.password.$dirty && myForm.password.$invalid">密码正确</i>
-                        <i class="icon ion-checkmark-circled balanced" ng-show="myForm.password.$dirty && myForm.password.$valid">密码不正确</i>
+                        <i class="icon ion-close-circled assertive" ng-show="myForm.password.$dirty && myForm.password.$invalid">密码不正确</i>
+                        <i class="icon ion-checkmark-circled balanced" ng-show="myForm.password.$dirty && myForm.password.$valid">密码正确</i>
                     </label>
 
 					<div class="button  button-block button-small button-positive" ng-click="login()"   ng-disabled="myForm.$invalid"> 登录</div>
