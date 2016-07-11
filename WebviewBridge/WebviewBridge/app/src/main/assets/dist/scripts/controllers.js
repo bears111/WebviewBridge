@@ -8,8 +8,10 @@ $scope.settings={};
 $scope.showPopup=function(){
    RainbowBridge.callMethod('BridgePlug','showToast',{'msg':'I am showToast'},
    function(msg){
-   alert(JSON.stringify(msg))});
-   angular.from
+   alert(JSON.stringify(msg));
+   console.info(msg);
+   });
+
 }
 
 RainbowBridge.onJavaCompleteMainActivity=function(res){

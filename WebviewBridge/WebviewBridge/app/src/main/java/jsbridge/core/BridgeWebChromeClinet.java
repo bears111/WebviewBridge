@@ -1,7 +1,9 @@
 package jsbridge.core;
 
 import android.app.Activity;
+import android.util.Log;
 import android.view.View;
+import android.webkit.ConsoleMessage;
 import android.webkit.JsPromptResult;
 import android.webkit.JsResult;
 import android.webkit.WebChromeClient;
@@ -50,4 +52,17 @@ public class BridgeWebChromeClinet extends WebChromeClient {
         }
         super.onProgressChanged(view, newProgress);
     }
+
+    @Override
+    public void onConsoleMessage(String message, int lineNumber, String sourceID) {
+        Log.i("console", message + "(" +sourceID  + ":" + lineNumber+")");
+        super.onConsoleMessage(message, lineNumber, sourceID);
+    }
+
+    @Override
+    public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
+        Log.i("console", "["+consoleMessage.messageLevel()+"] "+ consoleMessage.message() + "(" +consoleMessage.sourceId()  + ":" + consoleMessage.lineNumber()+")");
+        return super.onConsoleMessage(consoleMessage);
+    }
+
 }
