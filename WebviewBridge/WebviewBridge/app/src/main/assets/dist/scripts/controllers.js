@@ -24,15 +24,16 @@ $scope.showPopup1=function(){
    );
 }
 }])
-.controller('LoginCtrl',['$scope', '$ionicPopup', '$timeout', '$state',  '$data', function($scope, $ionicPopup, $timeout, $state, $data) {
+.controller('LoginCtrl',['$scope', '$ionicPopup','$http', '$timeout', '$state',  '$data', function($scope, $ionicPopup,$http,$timeout, $state, $data) {
         $scope.formUser = {};
         //执行用户登录操作
         $scope.login = function(){
         if($scope.formUser){
-         console.log($scope.formUser.phoneNumber+"_____"+$scope.formUser.password);
          alert($scope.formUser.phoneNumber+"_____"+$scope.formUser.password);
+         $state.go("dash",{loginSuccess:123});
         }
-        }
+
+ }
 
 
 }])
