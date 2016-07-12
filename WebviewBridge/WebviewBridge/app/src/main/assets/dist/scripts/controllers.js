@@ -28,15 +28,13 @@ $scope.showPopup1=function(){
         $scope.formUser = {};
         //执行用户登录操作
         $scope.login = function(){
-         /*console.log($scope.formUser);*/
-         var myPopup = $ionicPopup.show({
-                         title: '<b>登录</b>'
-           });
-           $timeout(function(){
-           myPopup.close();
-           $state.go("dash");
-           },1000)
-        };
+        if($scope.formUser){
+         console.log($scope.formUser.phoneNumber+"_____"+$scope.formUser.password);
+         alert($scope.formUser.phoneNumber+"_____"+$scope.formUser.password);
+        }
+        }
+
+
 }])
 .controller('ModifyPasswordCtrl',['$scope', '$ionicPopup', '$timeout', '$state',  '$data', function($scope, $ionicPopup, $timeout, $state, $data) {}])
 .controller('RegisterCtrl',['$scope','$ionicPopup', '$timeout', '$state',  '$data', function($scope, $ionicPopup, $timeout, $state , $data) {}])

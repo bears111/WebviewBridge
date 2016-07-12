@@ -52,7 +52,6 @@ public class MainActivity extends Activity {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         if ((keyCode == KeyEvent.KEYCODE_BACK) && myWebView.canGoBack()) {
             myWebView.goBack(); // goBack()表示返回WebView的上一页面
-            Log.i(TAG,"----"+myWebView.getProgress());
             return true;
         }
         return super.onKeyDown(keyCode,event);
