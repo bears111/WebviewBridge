@@ -29,7 +29,7 @@ $scope.showPopup1=function(){
         //执行用户登录操作
         $scope.login = function(){
         if($scope.formUser){
-         alert($scope.formUser.phoneNumber+"_____"+$scope.formUser.password);
+         alert($scope.formUser.phoneNumber+"检验完的"+$scope.formUser.password);
          $state.go("dash",{loginSuccess:123});
         }
 
